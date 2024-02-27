@@ -1,0 +1,12 @@
+Se han dado de alta el fondo con los siguiente datos: ('Ahorro 1765', 'Renta Variable', 'Mediano Plazo', 'ICBC Investments Argentina S.A.U.S.G.F.C.I.', 'ICBC (Arg) S.A.', 'Global', 'Peso Argentina', 'CCC', '22/02/2024', 'Professional Rating Services ACR S.A.', 'Argentina', 'Fondo Mutuo Abierto', 'Activo', 'BYMA', '1324', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '24hs')
+
+Se han dado de alta el fondo con los siguiente datos: ('Ahorro777', 'Renta Fija', 'Mediano Plazo', 'StoneX Asset Management S.A.', 'Banco Supervielle S.A.', 'Argentina', 'Peso Argentina', 'AAA', '22/02/2023', 'FIX SCR S.A.', 'Argentina', 'Fondo Mutuo Abierto', 'Activo', 'BYMA', '1434', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '24hs')
+
+Se ha eliminado de la dd bb el fondo con el siguiente id: 6
+
+Se ha eliminado de la dd bb el fondo con el siguiente id: 10
+
+Se ha modificado el fondo con los siguiente datos: ('Ahorro 1718', 'Renta Variable', 'Corto Plazo', 'Balanz S.G.F.C.I.S.A.', 'Banco de Valores S.A.', 'Argentina', 'Peso Argentina', 'AAA', '22/02/2024', 'FIX SCR S.A.', 'Brasil', 'Fondo Cerrado', 'Activo', 'BYMA', '12344', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '72hs')
+
+Se ha modificado el fondo con el id 9 con los siguiente datos: ('Ahorro 1819', 'Total Return', 'Mediano Plazo', 'Argenfunds S.A.', 'Banco Comafi S.A.', 'Argentina', 'Peso Argentina', 'AAA', '20/05/2023', 'Evaluadora Latinoamericana S.A. Calificadora de Riesgo', 'Argentina', 'Fondo Mutuo Abierto', 'Activo', 'BYMA', '1111', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '24hs')
+

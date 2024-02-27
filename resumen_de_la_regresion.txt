@@ -1,0 +1,45 @@
+Dataframe de retornos del fondo vs S&P Merval
+
+    años  retorno anual  retorno anual Merval
+0   1923      45.387052             55.385414
+1   1924     -12.120025             27.271084
+2   1925      -9.468627             27.419165
+3   1926     -19.046832             45.359450
+4   1927      29.946052             42.368638
+..   ...            ...                   ...
+95  2018      -1.427166             60.201914
+96  2019     -57.277839             40.194480
+97  2020     331.624085             32.692439
+98  2021     -22.969172             36.166617
+99  2022       6.856391             28.770017
+
+[100 rows x 3 columns]
+
+Resumen de la Regresion
+
+                                  OLS Regression Results                                 
+=========================================================================================
+Dep. Variable:     retorno anual Merval   R-squared (uncentered):                   0.052
+Model:                              OLS   Adj. R-squared (uncentered):              0.042
+Method:                   Least Squares   F-statistic:                              5.420
+Date:                  Mon, 26 Feb 2024   Prob (F-statistic):                      0.0219
+Time:                          14:29:31   Log-Likelihood:                         -515.92
+No. Observations:                   100   AIC:                                      1034.
+Df Residuals:                        99   BIC:                                      1036.
+Df Model:                             1                                                  
+Covariance Type:              nonrobust                                                  
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+retorno anual     0.1310      0.056      2.328      0.022       0.019       0.243
+==============================================================================
+Omnibus:                       13.637   Durbin-Watson:                   0.232
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               17.994
+Skew:                          -0.678   Prob(JB):                     0.000124
+Kurtosis:                       4.574   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+

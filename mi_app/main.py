@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec 18 20:36:57 2023
@@ -9,6 +9,7 @@ from vista import VistaPrincipal
 from excepciones import RegistroLogError
 from excepciones import registrar
 import observador
+
 if __name__=="__main__":
     root_tk = Tk()
     mi_app = VistaPrincipal(root_tk)

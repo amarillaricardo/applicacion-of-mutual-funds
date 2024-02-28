@@ -86,16 +86,17 @@ class BaseDeDatos():
         # regex para el campo cadena
         patron = r"[A-Za-z0-9\sáéíóú]*"
         if (re.match(patron, cadena)):
-            if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != "" and sociedad_depositaria != "" and codigo_cafci != "":
+            if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != ""
+            and sociedad_depositaria != "" and codigo_cafci != "":
                 con = self.conexion()
                 cursor = con.cursor()
                 data = (nombre_del_fondo, tipo_de_inversion, horizonte, sociedad_gerente,
-                      sociedad_depositaria, region, cotizado_originalmente, calificacion,
-                      fecha_de_calificacion, calificadora_de_riesgo, pais_sede,
-                      tipo_de_activo, estado, bolsa, codigo_cafci, comision_de_ingreso,
-                      honorarios_de_administracion, comision_de_egreso, comision_de_transferencia,
-                      gastos_ordinarios_de_gestion, cobra_comision_por_desempeno,
-                      inversion_minima, plazo_de_liquidacion)
+                        sociedad_depositaria, region, cotizado_originalmente, calificacion,
+                        fecha_de_calificacion, calificadora_de_riesgo, pais_sede,
+                        tipo_de_activo, estado, bolsa, codigo_cafci, comision_de_ingreso,
+                        honorarios_de_administracion, comision_de_egreso, comision_de_transferencia,
+                        gastos_ordinarios_de_gestion, cobra_comision_por_desempeno,
+                        inversion_minima, plazo_de_liquidacion)
                 sql = """INSERT INTO fondos(nombre_del_fondo,tipo_de_inversion,
                     horizonte,sociedad_gerente,
                     sociedad_depositaria,region,cotizado_originalmente,calificacion,

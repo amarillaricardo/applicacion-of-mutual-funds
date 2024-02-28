@@ -196,8 +196,8 @@ class BaseDeDatos():
                         cursor.execute(sql, data)
                         con.commit()
                         self.actualizar_treeview(tree)
-                        return f"Se ha modificado el fondo con el id {id_del_fondo_a_modificar} " + 
-                                "con los siguiente datos: {data}"
+                        texto = "con los siguiente datos:"
+                        return f"Se ha modificado el fondo con el id {id_del_fondo_a_modificar} {texto} {data}"
                         showinfo("Base de datos: Actualizacion",
                                  "Se ha modificado el registro con id " +
                                  id_del_fondo_a_modificar + " con exito")

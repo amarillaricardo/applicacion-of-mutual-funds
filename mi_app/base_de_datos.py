@@ -88,32 +88,35 @@ class BaseDeDatos():
         # regex para el campo cadena
         patron = r"[A-Za-z0-9\sáéíóú]*"
         if (re.match(patron, cadena)):
-            if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != "" and sociedad_depositaria != "" and codigo_cafci != "":
-                con = self.conexion()
-                cursor = con.cursor()
-                data = (nombre_del_fondo, tipo_de_inversion, horizonte, sociedad_gerente,
-                        sociedad_depositaria, region, cotizado_originalmente, calificacion,
-                        fecha_de_calificacion, calificadora_de_riesgo, pais_sede,
-                        tipo_de_activo, estado, bolsa, codigo_cafci, comision_de_ingreso,
-                        honorarios_de_administracion, comision_de_egreso, comision_de_transferencia,
-                        gastos_ordinarios_de_gestion, cobra_comision_por_desempeno,
-                        inversion_minima, plazo_de_liquidacion)
-                sql = """INSERT INTO fondos(nombre_del_fondo,tipo_de_inversion,
-                    horizonte,sociedad_gerente,
-                    sociedad_depositaria,region,cotizado_originalmente,calificacion,
-                    fecha_de_calificacion,calificadora_de_riesgo,pais_sede,
-                    tipo_de_activo,estado,bolsa, codigo_cafci,comision_de_ingreso,
-                    honorarios_de_administracion,comision_de_egreso,
-                    comision_de_transferencia,
-                    gastos_ordinarios_de_gestion,cobra_comision_por_desempeno,
-                    inversion_minima,plazo_de_liquidacion) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != "":
+                if sociedad_depositaria != "" and codigo_cafci != "":
+                    con = self.conexion()
+                    cursor = con.cursor()
+                    data = (nombre_del_fondo, tipo_de_inversion, horizonte, sociedad_gerente,
+                            sociedad_depositaria, region, cotizado_originalmente, calificacion,
+                            fecha_de_calificacion, calificadora_de_riesgo, pais_sede,
+                            tipo_de_activo, estado, bolsa, codigo_cafci, comision_de_ingreso,
+                            honorarios_de_administracion, comision_de_egreso, comision_de_transferencia,
+                            gastos_ordinarios_de_gestion, cobra_comision_por_desempeno,
+                            inversion_minima, plazo_de_liquidacion)
+                    sql = """INSERT INTO fondos(nombre_del_fondo,tipo_de_inversion,
+                        horizonte,sociedad_gerente,
+                        sociedad_depositaria,region,cotizado_originalmente,calificacion,
+                        fecha_de_calificacion,calificadora_de_riesgo,pais_sede,
+                        tipo_de_activo,estado,bolsa, codigo_cafci,comision_de_ingreso,
+                        honorarios_de_administracion,comision_de_egreso,
+                        comision_de_transferencia,
+                        gastos_ordinarios_de_gestion,cobra_comision_por_desempeno,
+                        inversion_minima,plazo_de_liquidacion) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                                                                   ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                                                                   ?, ?, ?)"""
-                cursor.execute(sql, data)
-                con.commit()
-                self.actualizar_treeview(tree)
-                return f"Se han dado de alta el fondo con los siguiente datos: {data}"
-                showinfo("Base de datos: Actualizacion", "Se ha creado el nuevo registro con exito")
+                    cursor.execute(sql, data)
+                    con.commit()
+                    self.actualizar_treeview(tree)
+                    return f"Se han dado de alta el fondo con los siguiente datos: {data}"
+                    showinfo("Base de datos: Actualizacion", "Se ha creado el nuevo registro con exito")
+                else:
+                showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
             else:
                 showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
         else:
@@ -124,7 +127,8 @@ class BaseDeDatos():
         item_del_treeview = tree.focus()
         id_del_fondo = str(tree.item(item_del_treeview)['text'])
         if item_del_treeview == "":
-            showinfo("Treeview", "Debe seleccionar un fondo de la tabla de abajo para continuar, luego de haber consultado la ddbb. Gracias")
+            showinfo("Treeview",
+                     "Debe seleccionar un fondo de la tabla de abajo para continuar, luego de haber consultado la ddbb. Gracias")
         elif item_del_treeview != "":
             sql = "DELETE FROM fondos WHERE id = " + id_del_fondo
             con = self.conexion()

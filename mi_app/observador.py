@@ -58,5 +58,11 @@ class ConcreteObserverA(Observador):
         with open("resumen_de_la_regresion.txt", 'a') as opened_file:
             output=f"Dataframe de retornos del fondo vs S&P Merval\n\n{df}\n\nResumen de la Regresion\n\n{results.summary()}"
             opened_file.write(f"{output}\n\n")
-        mensaje_resumen_de_la_regresion=f"El analisis incluye la estimacion de una Regresion por MCO y se ha generado el archivo resumen_de_la_regresion.txt en la carpeta principal en donde hay un   completo detalle de la misma.\n\nPrincipales datos de la Regresion: \n\nEl Coeficiente de Determination de la Regresion es igual a {results.rsquared}\n\nEl Coeficiente de Determinacion Ajustado de la Regresion es igual a: {results.rsquared_adj}\n\n"
+        t1 = "El analisis incluye la estimacion de una Regresion por MCO "
+        t2 = "y se ha generado el archivo resumen_de_la_regresion.txt en la carpeta principal en donde hay"
+        t3 = " un completo detalle de la misma."
+        t4 = "Principales datos de la Regresion: "
+        t5 = "El Coeficiente de Determination de la Regresion es igual a "
+        t6 = "El Coeficiente de Determinacion Ajustado de la Regresion es igual a: "
+        mensaje_resumen_de_la_regresion=f"{t1}{t2}{t3}\n\n{t4}\n\n{t5}{results.rsquared}\n\n{t6}{results.rsquared_adj}\n\n"
         showinfo("Regresion",mensaje_resumen_de_la_regresion)

@@ -63,6 +63,7 @@ class BaseDeDatos():
             self.crear_tabla()
         except Exception:
             print("Hay un error en la creacion de la base de datos")
+
     def actualizar_treeview(self, mitreview):
         records = mitreview.get_children()
         for element in records:
@@ -74,6 +75,7 @@ class BaseDeDatos():
         resultado = datos.fetchall()
         for fila in resultado:
             mitreview.insert("", 0, text=fila[0], values=(fila[1], fila[2], fila[3]))
+
     @log('base_de_datos.log')
     def alta(self, nombre_del_fondo, tipo_de_inversion, horizonte, sociedad_gerente,
              sociedad_depositaria, region, cotizado_originalmente, calificacion,
@@ -116,6 +118,7 @@ class BaseDeDatos():
                 showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
         else:
             print("error en campo nombre_del_fondo")
+
     @log('base_de_datos.log')
     def borrar(self, tree):
         item_del_treeview = tree.focus()
@@ -132,6 +135,7 @@ class BaseDeDatos():
             return f"Se ha eliminado de la dd bb el fondo con el siguiente id: {id_del_fondo}"
             showinfo("Base de datos: Actualizacion",
                      "Se ha borrado el registro con id " + id_del_fondo + " con exito")
+
     @log('base_de_datos.log')
     def modificar(self, nombre_del_fondo, tipo_de_inversion, horizonte, sociedad_gerente,
                   sociedad_depositaria, region, cotizado_originalmente, calificacion,

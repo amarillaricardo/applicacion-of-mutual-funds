@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec 18 08:59:52 2023
@@ -9,10 +9,11 @@ from tkinter.messagebox import showerror
 from tkinter.messagebox import askyesno
 import sqlite3
 import re
-#Decorador con parametro el cual es un log de seguimiento de las acciones en la base de datos. 
+# Decorador con parametro el cual es un log de seguimiento de las acciones en la base de datos.
+
+
 def log(fichero_log):
     def decorador_log(funcion_parametro):
-        
         def decorador_funcion(*args, **kwargs):
             with open(fichero_log, 'a') as opened_file:
                 output = funcion_parametro(*args, **kwargs)

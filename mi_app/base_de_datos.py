@@ -20,10 +20,13 @@ def log(fichero_log):
                 opened_file.write(f"{output}\n\n")
         return decorador_funcion
     return decorador_log
+
+
 class BaseDeDatos():
     def conexion(self):
-        con = sqlite3.connect("mibase.db") 
+        con = sqlite3.connect("mibase.db")
         return con
+
     def crear_tabla(self):
         con = self.conexion()
         cursor = con.cursor()
@@ -45,7 +48,7 @@ class BaseDeDatos():
                   bolsa varchar(255) NULL,
                   codigo_cafci varchar(255) NULL,
                   comision_de_ingreso varchar(255) NULL,
-                  honorarios_de_administracion varchar(255) NULL,	 
+                  honorarios_de_administracion varchar(255) NULL,
                   comision_de_egreso varchar(255) NULL,
                   comision_de_transferencia varchar(255) NULL,
                   gastos_ordinarios_de_gestion varchar(255) NULL,

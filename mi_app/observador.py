@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun Feb 25 22:11:05 2024
@@ -9,22 +9,31 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 from tkinter.messagebox import showinfo
+
+
 class Sujeto:
     observadores=[]
-    def agregar(self,obj):
+
+    def agregar(self, obj):
         self.observadores.append(obj)
-    def quitar(self,):
+    def quitar(self, ):
         pass
-    def notificar(self,*args):
+    def notificar(self, *args):
         for observador in self.observadores:
             observador.update(args)
+
+
 class Observador:
     def update(self):
         raise NotImplementedError("Delegación de actualización")
+
+
 class ConcreteObserverA(Observador):
+
     def __init__(self, obj):
         self.observado_a = obj
         self.observado_a.agregar(self)
+
     def update(self, args):
         print("Actualización dentro de ObservadorConcretoA")
         data,=args        

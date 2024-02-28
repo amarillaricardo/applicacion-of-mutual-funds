@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec 18 08:04:12 2023
-
 @author: ramarilla
 """
 from tkinter import Label
@@ -15,8 +14,6 @@ from tkinter import Button
 from tkinter import Menu
 from base_de_datos import BaseDeDatos
 from modelo import Modelo
-
-
 #from base_de_datos import conexion
 #from base_de_datos import crear_tabla
 #from base_de_datos import alta
@@ -26,38 +23,24 @@ from modelo import Modelo
 #from modelo import actualizar_treeview2
 #from modelo import simulacion_cotizaciones_del_fondo
 #from modelo import actualizar_treeview3
-
-
 mi_base_de_datos = BaseDeDatos()
-
-
-
 # ##############################################
 # VISTA
 # ##############################################
 
 class VistaPrincipal():
-    
     def __init__(self,root):
-        
        root.title("Sistema de análisis de Fondos Común de Inversión(FCI)")
-               
        titulo = Label(root, text="Ingrese datos del FCI para crear el nuevo registro", bg="DarkOrchid3", fg="thistle1", height=1, width=60)
        titulo.grid(row=0, column=0, columnspan=4, padx=1, pady=1, sticky="w"+"e")
-    
        self.mi_modelo = Modelo()
-    
        menubar = Menu(root)
-    
        menu_archivo = Menu(menubar,tearoff=0)
        menu_archivo.add_command(label="Abrir",command=self.mi_modelo.hola)
        menu_archivo.add_command(label="Guardar",command=self.mi_modelo.hola)
        menu_archivo.add_separator()
        menu_archivo.add_command(label="Salir",command=root.quit)
-    
        menubar.add_cascade(label="Archivo",menu=menu_archivo)
-    
-    
        menu_datos = Menu(menubar,tearoff=0)
        menu_datos.add_command(label="Impotar datos desde Excel",command=self.mi_modelo.hola)
        menu_datos.add_command(label="Importar datos desde .txt",command=self.mi_modelo.hola)
@@ -65,7 +48,6 @@ class VistaPrincipal():
        menu_datos.add_separator()
        menu_datos.add_command(label="Salir",command=root.quit)
        menubar.add_cascade(label="Datos",menu=menu_datos)
-    
        menu_ayuda = Menu(menubar,tearoff=0)
        menu_ayuda.add_command(label="Consultar manual",command=self.mi_modelo.hola)
        menu_ayuda.add_command(label="Actualizaciones de la App",command=self.mi_modelo.hola)
@@ -73,10 +55,7 @@ class VistaPrincipal():
        menu_ayuda.add_separator()
        menu_ayuda.add_command(label="Salir",command=root.quit)
        menubar.add_cascade(label="Ayuda",menu=menu_ayuda)
-    
        root.config(menu=menubar)
-    
-    
        etiqueta1 = Label(root, text="nombre_del_fondo*", fg='#f00')
        etiqueta1.grid(row=1, column=0, sticky="w")
        etiqueta2 = Label(root, text="tipo_de_inversion*", fg='#f00')
@@ -127,9 +106,7 @@ class VistaPrincipal():
        etiqueta24.grid(row=33, column=0, sticky="w")
        etiqueta25 = Label(root, text="Seleccionar la cantidad de años del análisis de rentabilidad del fondo")
        etiqueta25.grid(row=34, column=0, sticky="w")
-    
-       # Defino variables para tomar valores de campos de entrada
-    
+       #Defino variables para tomar valores de campos de entrada
        nombre_del_fondo = StringVar()
        tipo_de_inversion = StringVar()
        horizonte = StringVar()
@@ -155,25 +132,17 @@ class VistaPrincipal():
        plazo_de_liquidacion = StringVar()
        id_consulta_especifica = StringVar()
        numero_de_años = IntVar()
-    
-    
-      
        w_ancho = 20
-    
        entrada1 = Entry(root, textvariable = nombre_del_fondo, width = w_ancho) 
        entrada1.grid(row = 1, column = 1)
-    
        entrada2 = ttk.Combobox(root, textvariable = tipo_de_inversion, width = w_ancho) 
        entrada2['values'] = ["Renta Fija","Renta Variable","Renta Mixta","Mercado de Dinero","Pymes","Total Return","Otro"]
        entrada2['state'] = 'readonly'
        entrada2.grid(row = 2, column = 1)
-    
        entrada3 = ttk.Combobox(root, textvariable = horizonte, width = w_ancho)
        entrada3['values'] = ["Corto Plazo","Mediano Plazo","Largo Plazo","Flexible","Sin asignar","Otro"]
        entrada3['state'] = 'readonly'
        entrada3.grid(row = 3, column = 1)
-    
-    
        entrada4 = ttk.Combobox(root, textvariable = sociedad_gerente, width = w_ancho) 
        entrada4['values'] =[
         "Balanz S.G.F.C.I.S.A.",
@@ -248,8 +217,6 @@ class VistaPrincipal():
         ]
        entrada4['state'] = 'readonly'
        entrada4.grid(row = 4, column = 1)
-    
-    
        entrada5 = ttk.Combobox(root, textvariable = sociedad_depositaria, width = w_ancho) 
        entrada5['values'] = [
        "Banco de Valores S.A.",
@@ -287,7 +254,6 @@ class VistaPrincipal():
            ]
        entrada5['state'] = 'readonly'
        entrada5.grid(row = 5, column = 1)
-    
        entrada6 = ttk.Combobox(root, textvariable = region, width = w_ancho) 
        entrada6['values'] = [
                              "Argentina",
@@ -299,23 +265,18 @@ class VistaPrincipal():
                              ]
        entrada6['state'] = 'readonly'
        entrada6.grid(row = 6, column = 1)
-    
        entrada7 = ttk.Combobox(root, textvariable = cotizado_originalmente, width = w_ancho) 
        entrada7['values'] = [
                              "Peso Argentina",
                              "Dollar US",
-                             "Euro",
+                             "Euro"
                              ]
        entrada7['state'] = 'readonly'
        entrada7.grid(row = 7, column = 1)
-    
-    
        entrada8 = Entry(root, textvariable = calificacion, width = w_ancho) 
        entrada8.grid(row = 8, column = 1)
        entrada9 = Entry(root, textvariable = fecha_de_calificacion, width = w_ancho) 
        entrada9.grid(row = 9, column = 1)
-    
-    
        entrada10 = ttk.Combobox(root, textvariable = calificadora_de_riesgo, width = w_ancho) 
        entrada10['values'] = [
                                "No Registra",
@@ -326,12 +287,10 @@ class VistaPrincipal():
                                "Fitch Argentina Calificadora de Riesgo S.A.",
                                "Professional Rating Services ACR S.A.",
                                "Univ. Nac. de Tres de Febrero",
-                               "Evaluadora Latinoamericana S.A. Calificadora de Riesgo",
-    
+                               "Evaluadora Latinoamericana S.A. Calificadora de Riesgo"
                              ]
        entrada10['state'] = 'readonly'
        entrada10.grid(row = 10, column = 1)
-    
        entrada11 = ttk.Combobox(root, textvariable = pais_sede, width = w_ancho) 
        entrada11['values'] = [
                                "Argentina",
@@ -340,7 +299,6 @@ class VistaPrincipal():
                              ]
        entrada11['state'] = 'readonly'
        entrada11.grid(row = 11, column = 1)
-    
        entrada12 = ttk.Combobox(root, textvariable = tipo_de_activo, width = w_ancho) 
        entrada12['values'] = [
                                "Fondo Mutuo Abierto",
@@ -350,8 +308,6 @@ class VistaPrincipal():
                              ]
        entrada12['state'] = 'readonly'
        entrada12.grid(row = 12, column = 1)
-    
-    
        entrada13 = ttk.Combobox(root, textvariable = estado, width = w_ancho) 
        entrada13['values'] = [
                                "Activo",
@@ -359,7 +315,6 @@ class VistaPrincipal():
                              ]
        entrada13['state'] = 'readonly'
        entrada13.grid(row = 13, column = 1)
-    
        entrada14 = ttk.Combobox(root, textvariable = bolsa, width = w_ancho) 
        entrada14['values'] = [
                                "BYMA",
@@ -371,7 +326,6 @@ class VistaPrincipal():
                              ]
        entrada14['state'] = 'readonly'
        entrada14.grid(row = 14, column = 1)
-    
        entrada15 = Entry(root, textvariable = codigo_cafci, width = w_ancho) 
        entrada15.grid(row = 15, column = 1)
        entrada16 = Entry(root, textvariable = comision_de_ingreso, width = w_ancho) 
@@ -420,47 +374,31 @@ class VistaPrincipal():
                              ]
        entrada25['state'] = 'readonly'
        entrada25.grid(row = 34, column = 1)
-    
-    
-    
-    
-    
        # --------------------------------------------------
        # TREEVIEW
        # --------------------------------------------------
-    
-    
        tree = ttk.Treeview(root)
        tree["columns"]=("col1", "col2", "col3")
        tree.column("#0", width=90, minwidth=20)
        tree.column("col1", width=200, minwidth=20)
        tree.column("col2", width=200, minwidth=20)
        tree.column("col3", width=200, minwidth=20)
-    
-    
        tree.heading("#0", text="ID")
        tree.heading("col1", text="nombre_del_fondo")
        tree.heading("col2", text="tipo_de_inversion")
        tree.heading("col3", text="codigo_cafci")
-    
        tree.grid(row=25, column=0, columnspan=4,rowspan=4)
-    
-    
        tree2 = ttk.Treeview(root)
-    
        tree2["columns"]=("col11", "col21", "col31")
        tree2.column("#0", width=250, minwidth=20)
        tree2.column("col11", width=250, minwidth=20)
        tree2.column("col21", width=200, minwidth=20)
        tree2.column("col31", width=200, minwidth=20)
-    
        tree2.heading("#0", text="Campo")
        tree2.heading("col11", text="Variable")
        tree2.heading("col21", text="Rentabilidad")
        tree2.heading("col31", text="Tasa %")
-    
        tree2.grid(row=36, column=0, columnspan=4,rowspan=23)
-    
        def clear_text():
            entrada1.delete(0,'end')
            entrada2.set('')
@@ -485,7 +423,6 @@ class VistaPrincipal():
            entrada21.delete(0,'end')
            entrada22.delete(0,'end')
            entrada23.set('')    
-           
        def alta_sofisticado(nombre_del_fondo,tipo_de_inversion,horizonte,sociedad_gerente,
        sociedad_depositaria,region,cotizado_originalmente,calificacion,
        fecha_de_calificacion,calificadora_de_riesgo,pais_sede,
@@ -501,7 +438,6 @@ class VistaPrincipal():
            gastos_ordinarios_de_gestion,cobra_comision_por_desempeno,
            inversion_minima,plazo_de_liquidacion, tree)
            clear_text()
-
        def modificar_sofisticado(nombre_del_fondo,tipo_de_inversion,horizonte,sociedad_gerente,
        sociedad_depositaria,region,cotizado_originalmente,calificacion,
        fecha_de_calificacion,calificadora_de_riesgo,pais_sede,
@@ -517,8 +453,6 @@ class VistaPrincipal():
            gastos_ordinarios_de_gestion,cobra_comision_por_desempeno,
            inversion_minima,plazo_de_liquidacion, tree)
            clear_text()
-    
-    
        boton_alta=Button(root, text="Alta de registro en ddbb", command=lambda:alta_sofisticado(nombre_del_fondo.get(), 
                                                                 tipo_de_inversion.get(), 
                                                                 horizonte.get(), 
@@ -543,10 +477,8 @@ class VistaPrincipal():
                                                                 inversion_minima.get(), 
                                                                 plazo_de_liquidacion.get(),tree))
        boton_alta.grid(row=1, column=2, sticky="ew")
-    
        boton_consulta=Button(root, text="Consulta de la ddbb",command=lambda:mi_base_de_datos.consulta(tree))
        boton_consulta.grid(row=2, column=2, sticky="ew")
-    
        boton_modificar=Button(root, text="Modificar registro en ddbb", command=lambda:modificar_sofisticado(nombre_del_fondo.get(), 
                                                                 tipo_de_inversion.get(), 
                                                                 horizonte.get(), 
@@ -570,21 +502,10 @@ class VistaPrincipal():
                                                                 cobra_comision_por_desempeno.get(), 
                                                                 inversion_minima.get(), 
                                                                 plazo_de_liquidacion.get(),tree))
-    
        boton_modificar.grid(row=3, column=2, sticky="ew")
-    
        boton_borrar=Button(root, text="Baja de registro de la ddbb",command=lambda:mi_base_de_datos.borrar(tree))
        boton_borrar.grid(row=4, column=2, sticky="ew")
-    
        boton_limpiar=Button(root, text="Limpiar tabla",command=lambda:self.mi_modelo.limpiar_treeview(tree))
        boton_limpiar.grid(row=5, column=2, sticky="ew")
-    
-    
        boton_consulta_especifica=Button(root, text="Consulta y Analisis del fondo",command=lambda:self.mi_modelo.consultar_especifica(id_consulta_especifica.get(),numero_de_años.get(),tree2,root))
        boton_consulta_especifica.grid(row=33, column=2, sticky="ew")
-        
-       
-           
-           
-       
-    

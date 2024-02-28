@@ -197,8 +197,8 @@ class BaseDeDatos():
                         return f"Se ha modificado el fondo con el id {id_del_fondo_a_modificar} con los siguiente datos: {data}"
                         showinfo("Base de datos: Actualizacion",
                                  "Se ha modificado el registro con id " + id_del_fondo_a_modificar + " con exito")
-                        else:
-                    showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
+                    else:
+                        showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
                 else:
                     showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
             else:

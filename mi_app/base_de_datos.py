@@ -86,8 +86,7 @@ class BaseDeDatos():
         # regex para el campo cadena
         patron = r"[A-Za-z0-9\sáéíóú]*"
         if (re.match(patron, cadena)):
-            if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != ""
-            and sociedad_depositaria != "" and codigo_cafci != "":
+            if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != "" and sociedad_depositaria != "" and codigo_cafci != "":
                 con = self.conexion()
                 cursor = con.cursor()
                 data = (nombre_del_fondo, tipo_de_inversion, horizonte, sociedad_gerente,

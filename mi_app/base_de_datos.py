@@ -84,7 +84,7 @@ class BaseDeDatos():
              inversion_minima, plazo_de_liquidacion, tree):
         cadena = nombre_del_fondo
         # regex para el campo cadena
-        patron = "[A-Za-z0-9\sáéíóú]*"
+        patron = r"[A-Za-z0-9\sáéíóú]*"
         if (re.match(patron, cadena)):
             if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != "" and sociedad_depositaria != "" and codigo_cafci != "":
                 con = self.conexion()

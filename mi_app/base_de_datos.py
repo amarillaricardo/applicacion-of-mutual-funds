@@ -61,7 +61,7 @@ class BaseDeDatos():
         try:
             self.conexion()
             self.crear_tabla()
-        except:
+        except Exception:
             print("Hay un error en la creacion de la base de datos")
     def actualizar_treeview(self,mitreview):
         records = mitreview.get_children()

@@ -128,7 +128,8 @@ class BaseDeDatos():
         id_del_fondo = str(tree.item(item_del_treeview)['text'])
         if item_del_treeview == "":
             showinfo("Treeview",
-                     "Debe seleccionar un fondo de la tabla de abajo para continuar, luego de haber consultado la ddbb. Gracias")
+                     "Debe seleccionar un fondo de la tabla de abajo para continuar,
+                      luego de haber consultado la ddbb. Gracias")
         elif item_del_treeview != "":
             sql = "DELETE FROM fondos WHERE id = " + id_del_fondo
             con = self.conexion()
@@ -151,7 +152,7 @@ class BaseDeDatos():
         item_del_treeview = tree.focus()
         id_del_fondo_a_modificar = str(tree.item(item_del_treeview)['text'])
         if item_del_treeview == "":
-            showinfo("Treeview", 
+            showinfo("Treeview",
                      "Debe seleccionar un fondo de la tabla de abajo para continuar, luego de haber consultado la ddbb. Gracias")
         elif item_del_treeview != "":
             if askyesno("Modificar registro de la ddbb", "¿Esta seguro que desea modificar el registro?"):

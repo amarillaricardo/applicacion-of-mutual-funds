@@ -184,5 +184,6 @@ class BaseDeDatos():
                     showerror("Error en campos obligatorios","Es necesario completar el/los campo/os obligatorio/os(*)")
             else:
                 showinfo("Modificar registro de la ddbb","Gracias por su tiempo")
+    
     def consulta(self, tree):
         self.actualizar_treeview(tree)

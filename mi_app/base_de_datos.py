@@ -128,8 +128,8 @@ class BaseDeDatos():
         id_del_fondo = str(tree.item(item_del_treeview)['text'])
         if item_del_treeview == "":
             showinfo("Treeview",
-                                "Debe seleccionar un fondo de la tabla de abajo para continuar," +
-                                "luego de haber consultado la ddbb. Gracias")
+                     "Debe seleccionar un fondo de la tabla de abajo para continuar," +
+                     "luego de haber consultado la ddbb. Gracias")
         elif item_del_treeview != "":
             sql = "DELETE FROM fondos WHERE id = " + id_del_fondo
             con = self.conexion()
@@ -153,7 +153,8 @@ class BaseDeDatos():
         id_del_fondo_a_modificar = str(tree.item(item_del_treeview)['text'])
         if item_del_treeview == "":
             showinfo("Treeview",
-                     "Debe seleccionar un fondo de la tabla de abajo para continuar, luego de haber consultado la ddbb. Gracias")
+                     "Debe seleccionar un fondo de la tabla de abajo para continuar," +
+                     "luego de haber consultado la ddbb. Gracias")
         elif item_del_treeview != "":
             if askyesno("Modificar registro de la ddbb", "¿Esta seguro que desea modificar el registro?"):
                 if nombre_del_fondo != "" and tipo_de_inversion != "" and sociedad_gerente != "":
@@ -197,7 +198,8 @@ class BaseDeDatos():
                         self.actualizar_treeview(tree)
                         return f"Se ha modificado el fondo con el id {id_del_fondo_a_modificar} con los siguiente datos: {data}"
                         showinfo("Base de datos: Actualizacion",
-                                 "Se ha modificado el registro con id " + id_del_fondo_a_modificar + " con exito")
+                                 "Se ha modificado el registro con id " +
+                                 id_del_fondo_a_modificar + " con exito")
                     else:
                         showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
                 else:

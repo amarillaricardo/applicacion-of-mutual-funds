@@ -116,7 +116,7 @@ class BaseDeDatos():
                     return f"Se han dado de alta el fondo con los siguiente datos: {data}"
                     showinfo("Base de datos: Actualizacion", "Se ha creado el nuevo registro con exito")
                 else:
-                showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
+                    showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
             else:
                 showerror("Error en campos obligatorios", "Es necesario completar el/los campo/os obligatorio/os(*)")
         else:

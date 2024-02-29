@@ -416,126 +416,126 @@ class VistaPrincipal():
         tree2.heading("col31", text="Tasa %")
         tree2.grid(row=36, column=0, columnspan=4, rowspan=23)
 
-      def clear_text():
-          entrada1.delete(0, 'end')
-          entrada2.set('')
-          entrada3.set('')
-          entrada4.set('')
-          entrada5.set('')
-          entrada6.set('')
-          entrada7.set('')
-          entrada8.delete(0, 'end')
-          entrada9.delete(0, 'end')
-          entrada10.set('')
-          entrada11.set('')
-          entrada12.set('')
-          entrada13.set('')
-          entrada14.set('')
-          entrada15.delete(0, 'end')
-          entrada16.delete(0, 'end')
-          entrada17.delete(0, 'end')
-          entrada18.delete(0, 'end')
-          entrada19.delete(0, 'end')
-          entrada20.delete(0, 'end')
-          entrada21.delete(0, 'end')
-          entrada22.delete(0, 'end')
-          entrada23.set('')
-      
-      def alta_sofisticado(nombre_del_fondo,
-                           tipo_de_inversion,
-                           horizonte,
-                           sociedad_gerente,
-                           sociedad_depositaria,
-                           region,
-                           cotizado_originalmente,
-                           calificacion,
-                           fecha_de_calificacion,
-                           calificadora_de_riesgo,
-                           pais_sede,
-                           tipo_de_activo,
-                           estado,
-                           bolsa,
-                           codigo_cafci,
-                           comision_de_ingreso,
-                           honorarios_de_administracion,
-                           comision_de_egreso,
-                           comision_de_transferencia,
-                           gastos_ordinarios_de_gestion,
-                           cobra_comision_por_desempeno,
-                           inversion_minima,
-                           plazo_de_liquidacion, tree):
-          mi_base_de_datos.alta(nombre_del_fondo,
-                                tipo_de_inversion,
-                                horizonte,
-                                sociedad_gerente,
-                                sociedad_depositaria,
-                                region,
-                                cotizado_originalmente,
-                                calificacion,
-                                fecha_de_calificacion,
-                                calificadora_de_riesgo,
-                                pais_sede,
-                                tipo_de_activo,
-                                estado,
-                                bolsa,
-                                codigo_cafci,
-                                comision_de_ingreso,
-                                honorarios_de_administracion,
-                                comision_de_egreso,
-                                comision_de_transferencia,
-                                gastos_ordinarios_de_gestion,
-                                cobra_comision_por_desempeno,
-                                inversion_minima,
-                                plazo_de_liquidacion, tree)
-          clear_text()
+    def clear_text():
+        entrada1.delete(0, 'end')
+        entrada2.set('')
+        entrada3.set('')
+        entrada4.set('')
+        entrada5.set('')
+        entrada6.set('')
+        entrada7.set('')
+        entrada8.delete(0, 'end')
+        entrada9.delete(0, 'end')
+        entrada10.set('')
+        entrada11.set('')
+        entrada12.set('')
+        entrada13.set('')
+        entrada14.set('')
+        entrada15.delete(0, 'end')
+        entrada16.delete(0, 'end')
+        entrada17.delete(0, 'end')
+        entrada18.delete(0, 'end')
+        entrada19.delete(0, 'end')
+        entrada20.delete(0, 'end')
+        entrada21.delete(0, 'end')
+        entrada22.delete(0, 'end')
+        entrada23.set('')
+                            
+    def alta_sofisticado(nombre_del_fondo,
+                        tipo_de_inversion,
+                        horizonte,
+                        sociedad_gerente,
+                        sociedad_depositaria,
+                        region,
+                        cotizado_originalmente,
+                        calificacion,
+                        fecha_de_calificacion,
+                        calificadora_de_riesgo,
+                        pais_sede,
+                        tipo_de_activo,
+                        estado,
+                        bolsa,
+                        codigo_cafci,
+                        comision_de_ingreso,
+                        honorarios_de_administracion,
+                        comision_de_egreso,
+                        comision_de_transferencia,
+                        gastos_ordinarios_de_gestion,
+                        cobra_comision_por_desempeno,
+                        inversion_minima,
+                        plazo_de_liquidacion, tree):
+        mi_base_de_datos.alta(nombre_del_fondo,
+                          tipo_de_inversion,
+                          horizonte,
+                          sociedad_gerente,
+                          sociedad_depositaria,
+                          region,
+                          cotizado_originalmente,
+                          calificacion,
+                          fecha_de_calificacion,
+                          calificadora_de_riesgo,
+                          pais_sede,
+                          tipo_de_activo,
+                          estado,
+                          bolsa,
+                          codigo_cafci,
+                          comision_de_ingreso,
+                          honorarios_de_administracion,
+                          comision_de_egreso,
+                          comision_de_transferencia,
+                          gastos_ordinarios_de_gestion,
+                          cobra_comision_por_desempeno,
+                          inversion_minima,
+                          plazo_de_liquidacion, tree)
+        clear_text()
 
-      def modificar_sofisticado(nombre_del_fondo,
-                                tipo_de_inversion,
-                                horizonte,
-                                sociedad_gerente,
-                                sociedad_depositaria,
-                                region,
-                                cotizado_originalmente,
-                                calificacion,
-                                fecha_de_calificacion,
-                                calificadora_de_riesgo,
-                                pais_sede,
-                                tipo_de_activo,
-                                estado,
-                                bolsa,
-                                codigo_cafci,
-                                comision_de_ingreso,
-                                honorarios_de_administracion,
-                                comision_de_egreso,
-                                comision_de_transferencia,
-                                gastos_ordinarios_de_gestion,
-                                cobra_comision_por_desempeno,
-                                inversion_minima,
-                                plazo_de_liquidacion, tree):
-          mi_base_de_datos.modificar(nombre_del_fondo,
-                                    tipo_de_inversion,
-                                    horizonte,
-                                    sociedad_gerente,
-                                    sociedad_depositaria,
-                                    region,
-                                    cotizado_originalmente,
-                                    calificacion,
-                                    fecha_de_calificacion,
-                                    calificadora_de_riesgo,
-                                    pais_sede,
-                                    tipo_de_activo,
-                                    estado,
-                                    bolsa,
-                                    codigo_cafci,
-                                    comision_de_ingreso,
-                                    honorarios_de_administracion,
-                                    comision_de_egreso,
-                                    comision_de_transferencia,
-                                    gastos_ordinarios_de_gestion,
-                                    cobra_comision_por_desempeno,
-                                    inversion_minima,
-                                    plazo_de_liquidacion, tree)
-          clear_text()
+    def modificar_sofisticado(nombre_del_fondo,
+                              tipo_de_inversion,
+                              horizonte,
+                              sociedad_gerente,
+                              sociedad_depositaria,
+                              region,
+                              cotizado_originalmente,
+                              calificacion,
+                              fecha_de_calificacion,
+                              calificadora_de_riesgo,
+                              pais_sede,
+                              tipo_de_activo,
+                              estado,
+                              bolsa,
+                              codigo_cafci,
+                              comision_de_ingreso,
+                              honorarios_de_administracion,
+                              comision_de_egreso,
+                              comision_de_transferencia,
+                              gastos_ordinarios_de_gestion,
+                              cobra_comision_por_desempeno,
+                              inversion_minima,
+                              plazo_de_liquidacion, tree):
+        mi_base_de_datos.modificar(nombre_del_fondo,
+                                  tipo_de_inversion,
+                                  horizonte,
+                                  sociedad_gerente,
+                                  sociedad_depositaria,
+                                  region,
+                                  cotizado_originalmente,
+                                  calificacion,
+                                  fecha_de_calificacion,
+                                  calificadora_de_riesgo,
+                                  pais_sede,
+                                  tipo_de_activo,
+                                  estado,
+                                  bolsa,
+                                  codigo_cafci,
+                                  comision_de_ingreso,
+                                  honorarios_de_administracion,
+                                  comision_de_egreso,
+                                  comision_de_transferencia,
+                                  gastos_ordinarios_de_gestion,
+                                  cobra_comision_por_desempeno,
+                                  inversion_minima,
+                                  plazo_de_liquidacion, tree)
+        clear_text()
 
 
     boton_alta = Button(root, text="Alta de registro en ddbb",

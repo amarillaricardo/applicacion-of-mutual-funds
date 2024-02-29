@@ -416,80 +416,55 @@ class VistaPrincipal():
         tree2.heading("col31", text="Tasa %")
         tree2.grid(row=36, column=0, columnspan=4, rowspan=23)
 
-    def clear_text():
-        entrada1.delete(0, 'end')
-        entrada2.set('')
-        entrada3.set('')
-        entrada4.set('')
-        entrada5.set('')
-        entrada6.set('')
-        entrada7.set('')
-        entrada8.delete(0, 'end')
-        entrada9.delete(0, 'end')
-        entrada10.set('')
-        entrada11.set('')
-        entrada12.set('')
-        entrada13.set('')
-        entrada14.set('')
-        entrada15.delete(0, 'end')
-        entrada16.delete(0, 'end')
-        entrada17.delete(0, 'end')
-        entrada18.delete(0, 'end')
-        entrada19.delete(0, 'end')
-        entrada20.delete(0, 'end')
-        entrada21.delete(0, 'end')
-        entrada22.delete(0, 'end')
-        entrada23.set('')
-                            
-    def alta_sofisticado(nombre_del_fondo,
-                        tipo_de_inversion,
-                        horizonte,
-                        sociedad_gerente,
-                        sociedad_depositaria,
-                        region,
-                        cotizado_originalmente,
-                        calificacion,
-                        fecha_de_calificacion,
-                        calificadora_de_riesgo,
-                        pais_sede,
-                        tipo_de_activo,
-                        estado,
-                        bolsa,
-                        codigo_cafci,
-                        comision_de_ingreso,
-                        honorarios_de_administracion,
-                        comision_de_egreso,
-                        comision_de_transferencia,
-                        gastos_ordinarios_de_gestion,
-                        cobra_comision_por_desempeno,
-                        inversion_minima,
-                        plazo_de_liquidacion, tree):
-        mi_base_de_datos.alta(nombre_del_fondo,
-                          tipo_de_inversion,
-                          horizonte,
-                          sociedad_gerente,
-                          sociedad_depositaria,
-                          region,
-                          cotizado_originalmente,
-                          calificacion,
-                          fecha_de_calificacion,
-                          calificadora_de_riesgo,
-                          pais_sede,
-                          tipo_de_activo,
-                          estado,
-                          bolsa,
-                          codigo_cafci,
-                          comision_de_ingreso,
-                          honorarios_de_administracion,
-                          comision_de_egreso,
-                          comision_de_transferencia,
-                          gastos_ordinarios_de_gestion,
-                          cobra_comision_por_desempeno,
-                          inversion_minima,
-                          plazo_de_liquidacion, tree)
-        clear_text()
-
-    def modificar_sofisticado(nombre_del_fondo,
+        def clear_text():
+            entrada1.delete(0, 'end')
+            entrada2.set('')
+            entrada3.set('')
+            entrada4.set('')
+            entrada5.set('')
+            entrada6.set('')
+            entrada7.set('')
+            entrada8.delete(0, 'end')
+            entrada9.delete(0, 'end')
+            entrada10.set('')
+            entrada11.set('')
+            entrada12.set('')
+            entrada13.set('')
+            entrada14.set('')
+            entrada15.delete(0, 'end')
+            entrada16.delete(0, 'end')
+            entrada17.delete(0, 'end')
+            entrada18.delete(0, 'end')
+            entrada19.delete(0, 'end')
+            entrada20.delete(0, 'end')
+            entrada21.delete(0, 'end')
+            entrada22.delete(0, 'end')
+            entrada23.set('')
+                                
+        def alta_sofisticado(nombre_del_fondo,
+                            tipo_de_inversion,
+                            horizonte,
+                            sociedad_gerente,
+                            sociedad_depositaria,
+                            region,
+                            cotizado_originalmente,
+                            calificacion,
+                            fecha_de_calificacion,
+                            calificadora_de_riesgo,
+                            pais_sede,
+                            tipo_de_activo,
+                            estado,
+                            bolsa,
+                            codigo_cafci,
+                            comision_de_ingreso,
+                            honorarios_de_administracion,
+                            comision_de_egreso,
+                            comision_de_transferencia,
+                            gastos_ordinarios_de_gestion,
+                            cobra_comision_por_desempeno,
+                            inversion_minima,
+                            plazo_de_liquidacion, tree):
+            mi_base_de_datos.alta(nombre_del_fondo,
                               tipo_de_inversion,
                               horizonte,
                               sociedad_gerente,
@@ -511,8 +486,10 @@ class VistaPrincipal():
                               gastos_ordinarios_de_gestion,
                               cobra_comision_por_desempeno,
                               inversion_minima,
-                              plazo_de_liquidacion, tree):
-        mi_base_de_datos.modificar(nombre_del_fondo,
+                              plazo_de_liquidacion, tree)
+            clear_text()
+
+        def modificar_sofisticado(nombre_del_fondo,
                                   tipo_de_inversion,
                                   horizonte,
                                   sociedad_gerente,
@@ -534,71 +511,94 @@ class VistaPrincipal():
                                   gastos_ordinarios_de_gestion,
                                   cobra_comision_por_desempeno,
                                   inversion_minima,
-                                  plazo_de_liquidacion, tree)
-        clear_text()
+                                  plazo_de_liquidacion, tree):
+            mi_base_de_datos.modificar(nombre_del_fondo,
+                                      tipo_de_inversion,
+                                      horizonte,
+                                      sociedad_gerente,
+                                      sociedad_depositaria,
+                                      region,
+                                      cotizado_originalmente,
+                                      calificacion,
+                                      fecha_de_calificacion,
+                                      calificadora_de_riesgo,
+                                      pais_sede,
+                                      tipo_de_activo,
+                                      estado,
+                                      bolsa,
+                                      codigo_cafci,
+                                      comision_de_ingreso,
+                                      honorarios_de_administracion,
+                                      comision_de_egreso,
+                                      comision_de_transferencia,
+                                      gastos_ordinarios_de_gestion,
+                                      cobra_comision_por_desempeno,
+                                      inversion_minima,
+                                      plazo_de_liquidacion, tree)
+            clear_text()
 
 
-    boton_alta = Button(root, text="Alta de registro en ddbb",
-                        command=lambda : alta_sofisticado(nombre_del_fondo.get(),
-                                                          tipo_de_inversion.get(),
-                                                          horizonte.get(),
-                                                          sociedad_gerente.get(),
-                                                          sociedad_depositaria.get(),
-                                                          region.get(),
-                                                          cotizado_originalmente.get(),
-                                                          calificacion.get(),
-                                                          fecha_de_calificacion.get(),
-                                                          calificadora_de_riesgo.get(),
-                                                          pais_sede.get(),
-                                                          tipo_de_activo.get(),
-                                                          estado.get(),
-                                                          bolsa.get(),
-                                                          codigo_cafci.get(),
-                                                          comision_de_ingreso.get(),
-                                                          honorarios_de_administracion.get(),
-                                                          comision_de_egreso.get(),
-                                                          comision_de_transferencia.get(),
-                                                          gastos_ordinarios_de_gestion.get(),
-                                                          cobra_comision_por_desempeno.get(),
-                                                          inversion_minima.get(),
-                                                          plazo_de_liquidacion.get(), tree))
-    boton_alta.grid(row=1, column=2, sticky="ew")
-    boton_consulta = Button(root, text="Consulta de la ddbb",
-                            command=lambda:mi_base_de_datos.consulta(tree))
-    boton_consulta.grid(row=2, column=2, sticky="ew")
-    boton_modificar = Button(root, text="Modificar registro en ddbb",
-                            command=lambda:modificar_sofisticado(nombre_del_fondo.get(),
-                                                                 tipo_de_inversion.get(),
-                                                                 horizonte.get(),
-                                                                 sociedad_gerente.get(),
-                                                                 sociedad_depositaria.get(),
-                                                                 region.get(),
-                                                                 cotizado_originalmente.get(),
-                                                                 calificacion.get(),
-                                                                 fecha_de_calificacion.get(),
-                                                                 calificadora_de_riesgo.get(),
-                                                                 pais_sede.get(),
-                                                                 tipo_de_activo.get(),
-                                                                 estado.get(),
-                                                                 bolsa.get(),
-                                                                 codigo_cafci.get(),
-                                                                 comision_de_ingreso.get(),
-                                                                 honorarios_de_administracion.get(),
-                                                                 comision_de_egreso.get(),
-                                                                 comision_de_transferencia.get(),
-                                                                 gastos_ordinarios_de_gestion.get(),
-                                                                 cobra_comision_por_desempeno.get(),
-                                                                 inversion_minima.get(),
-                                                                 plazo_de_liquidacion.get(), tree))
-    boton_modificar.grid(row=3, column=2, sticky="ew")
-    boton_borrar = Button(root, text="Baja de registro de la ddbb",
-                          command=lambda:mi_base_de_datos.borrar(tree))
-    boton_borrar.grid(row=4, column=2, sticky="ew")
-    boton_limpiar = Button(root, text="Limpiar tabla",
-                          command=lambda:self.mi_modelo.limpiar_treeview(tree))
-    boton_limpiar.grid(row=5, column=2, sticky="ew")
-    boton_consulta_especifica=Button(root, text="Consulta y Analisis del fondo",
-                                     command=lambda:self.mi_modelo.consultar_especifica(id_consulta_especifica.get(),
-                                                                                        numero_de_años.get(),
-                                                                                        tree2, root))
-    boton_consulta_especifica.grid(row=33, column=2, sticky="ew")
+        boton_alta = Button(root, text="Alta de registro en ddbb",
+                            command=lambda : alta_sofisticado(nombre_del_fondo.get(),
+                                                              tipo_de_inversion.get(),
+                                                              horizonte.get(),
+                                                              sociedad_gerente.get(),
+                                                              sociedad_depositaria.get(),
+                                                              region.get(),
+                                                              cotizado_originalmente.get(),
+                                                              calificacion.get(),
+                                                              fecha_de_calificacion.get(),
+                                                              calificadora_de_riesgo.get(),
+                                                              pais_sede.get(),
+                                                              tipo_de_activo.get(),
+                                                              estado.get(),
+                                                              bolsa.get(),
+                                                              codigo_cafci.get(),
+                                                              comision_de_ingreso.get(),
+                                                              honorarios_de_administracion.get(),
+                                                              comision_de_egreso.get(),
+                                                              comision_de_transferencia.get(),
+                                                              gastos_ordinarios_de_gestion.get(),
+                                                              cobra_comision_por_desempeno.get(),
+                                                              inversion_minima.get(),
+                                                              plazo_de_liquidacion.get(), tree))
+        boton_alta.grid(row=1, column=2, sticky="ew")
+        boton_consulta = Button(root, text="Consulta de la ddbb",
+                                command=lambda:mi_base_de_datos.consulta(tree))
+        boton_consulta.grid(row=2, column=2, sticky="ew")
+        boton_modificar = Button(root, text="Modificar registro en ddbb",
+                                command=lambda:modificar_sofisticado(nombre_del_fondo.get(),
+                                                                    tipo_de_inversion.get(),
+                                                                    horizonte.get(),
+                                                                    sociedad_gerente.get(),
+                                                                    sociedad_depositaria.get(),
+                                                                    region.get(),
+                                                                    cotizado_originalmente.get(),
+                                                                    calificacion.get(),
+                                                                    fecha_de_calificacion.get(),
+                                                                    calificadora_de_riesgo.get(),
+                                                                    pais_sede.get(),
+                                                                    tipo_de_activo.get(),
+                                                                    estado.get(),
+                                                                    bolsa.get(),
+                                                                    codigo_cafci.get(),
+                                                                    comision_de_ingreso.get(),
+                                                                    honorarios_de_administracion.get(),
+                                                                    comision_de_egreso.get(),
+                                                                    comision_de_transferencia.get(),
+                                                                    gastos_ordinarios_de_gestion.get(),
+                                                                    cobra_comision_por_desempeno.get(),
+                                                                    inversion_minima.get(),
+                                                                    plazo_de_liquidacion.get(), tree))
+        boton_modificar.grid(row=3, column=2, sticky="ew")
+        boton_borrar = Button(root, text="Baja de registro de la ddbb",
+                              command=lambda:mi_base_de_datos.borrar(tree))
+        boton_borrar.grid(row=4, column=2, sticky="ew")
+        boton_limpiar = Button(root, text="Limpiar tabla",
+                              command=lambda:self.mi_modelo.limpiar_treeview(tree))
+        boton_limpiar.grid(row=5, column=2, sticky="ew")
+        boton_consulta_especifica=Button(root, text="Consulta y Analisis del fondo",
+                                        command=lambda:self.mi_modelo.consultar_especifica(id_consulta_especifica.get(),
+                                                                                            numero_de_años.get(),
+                                                                                            tree2, root))
+        boton_consulta_especifica.grid(row=33, column=2, sticky="ew")

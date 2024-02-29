@@ -36,7 +36,7 @@ class VistaPrincipal():
     def __init__(self, root):
         root.title("Sistema de análisis de Fondos Común de Inversión(FCI)")
         titulo = Label(root, text="Ingrese datos del FCI para crear el nuevo registro",
-                      bg="DarkOrchid3", fg="thistle1", height=1, width=60)
+                       bg="DarkOrchid3", fg="thistle1", height=1, width=60)
         titulo.grid(row=0, column=0, columnspan=4,
                     padx=1, pady=1, sticky="w"+"e")
         self.mi_modelo = Modelo()
@@ -136,29 +136,29 @@ class VistaPrincipal():
         bolsa = StringVar()
         codigo_cafci = StringVar()
         comision_de_ingreso = DoubleVar()
-        honorarios_de_administracion  = DoubleVar()
-        comision_de_egreso  = DoubleVar()
-        comision_de_transferencia  = DoubleVar()
-        gastos_ordinarios_de_gestion  = DoubleVar()
-        cobra_comision_por_desempeno  = DoubleVar()
-        inversion_minima  = DoubleVar()
+        honorarios_de_administracion = DoubleVar()
+        comision_de_egreso = DoubleVar()
+        comision_de_transferencia = DoubleVar()
+        gastos_ordinarios_de_gestion = DoubleVar()
+        cobra_comision_por_desempeno = DoubleVar()
+        inversion_minima = DoubleVar()
         plazo_de_liquidacion = StringVar()
         id_consulta_especifica = StringVar()
         numero_de_años = IntVar()
         w_ancho = 20
-        entrada1 = Entry(root, textvariable = nombre_del_fondo, width = w_ancho)
+        entrada1 = Entry(root, textvariable=nombre_del_fondo, width=w_ancho)
         entrada1.grid(row=1, column=1)
-        entrada2 = ttk.Combobox(root, textvariable = tipo_de_inversion, width = w_ancho)
-        entrada2['values'] = ["Renta Fija","Renta Variable","Renta Mixta",
-                              "Mercado de Dinero","Pymes","Total Return","Otro"]
+        entrada2 = ttk.Combobox(root, textvariable=tipo_de_inversion, width=w_ancho)
+        entrada2['values'] = ["Renta Fija", "Renta Variable", "Renta Mixta",
+                              "Mercado de Dinero", "Pymes", "Total Return", "Otro"]
         entrada2['state'] = 'readonly'
         entrada2.grid(row=2, column=1)
-        entrada3 = ttk.Combobox(root, textvariable = horizonte, width = w_ancho)
-        entrada3['values'] = ["Corto Plazo","Mediano Plazo","Largo Plazo",
-                              "Flexible","Sin asignar","Otro"]
+        entrada3 = ttk.Combobox(root, textvariable=horizonte, width =w_ancho)
+        entrada3['values'] = ["Corto Plazo", "Mediano Plazo", "Largo Plazo",
+                              "Flexible", "Sin asignar", "Otro"]
         entrada3['state'] = 'readonly'
         entrada3.grid(row =3, column=1)
-        entrada4 = ttk.Combobox(root, textvariable = sociedad_gerente, width = w_ancho)
+        entrada4 = ttk.Combobox(root, textvariable=sociedad_gerente, width=w_ancho)
         entrada4['values'] = [
                               "Balanz S.G.F.C.I.S.A.",
                               "Santander Rio Asset Management G.F.C.I.S.A.",
@@ -227,11 +227,11 @@ class VistaPrincipal():
                               "Proahorro Administradora de Activos S.A.S.G.F.C.I.",
                               "Fondcapital S.A.S.G.F.C.I.",
                               "Bayfe S.A.S.G.F.C.I.",
-                              "Safimar S.A.S.G.F.C.I." 
+                              "Safimar S.A.S.G.F.C.I."
                              ]
         entrada4['state'] = 'readonly'
-        entrada4.grid(row =4, column=1)
-        entrada5 = ttk.Combobox(root, textvariable=sociedad_depositaria, width=w_ancho) 
+        entrada4.grid(row=4, column=1)
+        entrada5 = ttk.Combobox(root, textvariable=sociedad_depositaria, width=w_ancho)
         entrada5['values'] = [
                               "Banco de Valores S.A.",
                               "Banco Comafi S.A.",
@@ -392,7 +392,7 @@ class VistaPrincipal():
         # --------------------------------------------------
         # TREEVIEW
         # --------------------------------------------------
-    
+
         tree = ttk.Treeview(root)
         tree["columns"] = ("col1", "col2", "col3")
         tree.column("#0", width=90, minwidth=20)
@@ -440,53 +440,53 @@ class VistaPrincipal():
             entrada21.delete(0, 'end')
             entrada22.delete(0, 'end')
             entrada23.set('')
-                                
+  
         def alta_sofisticado(nombre_del_fondo,
-                            tipo_de_inversion,
-                            horizonte,
-                            sociedad_gerente,
-                            sociedad_depositaria,
-                            region,
-                            cotizado_originalmente,
-                            calificacion,
-                            fecha_de_calificacion,
-                            calificadora_de_riesgo,
-                            pais_sede,
-                            tipo_de_activo,
-                            estado,
-                            bolsa,
-                            codigo_cafci,
-                            comision_de_ingreso,
-                            honorarios_de_administracion,
-                            comision_de_egreso,
-                            comision_de_transferencia,
-                            gastos_ordinarios_de_gestion,
-                            cobra_comision_por_desempeno,
-                            inversion_minima,
-                            plazo_de_liquidacion, tree):
+                             tipo_de_inversion,
+                             horizonte,
+                             sociedad_gerente,
+                             sociedad_depositaria,
+                             region,
+                             cotizado_originalmente,
+                             calificacion,
+                             fecha_de_calificacion,
+                             calificadora_de_riesgo,
+                             pais_sede,
+                             tipo_de_activo,
+                             estado,
+                             bolsa,
+                             codigo_cafci,
+                             comision_de_ingreso,
+                             honorarios_de_administracion,
+                             comision_de_egreso,
+                             comision_de_transferencia,
+                             gastos_ordinarios_de_gestion,
+                             cobra_comision_por_desempeno,
+                             inversion_minima,
+                             plazo_de_liquidacion, tree):
             mi_base_de_datos.alta(nombre_del_fondo,
-                              tipo_de_inversion,
-                              horizonte,
-                              sociedad_gerente,
-                              sociedad_depositaria,
-                              region,
-                              cotizado_originalmente,
-                              calificacion,
-                              fecha_de_calificacion,
-                              calificadora_de_riesgo,
-                              pais_sede,
-                              tipo_de_activo,
-                              estado,
-                              bolsa,
-                              codigo_cafci,
-                              comision_de_ingreso,
-                              honorarios_de_administracion,
-                              comision_de_egreso,
-                              comision_de_transferencia,
-                              gastos_ordinarios_de_gestion,
-                              cobra_comision_por_desempeno,
-                              inversion_minima,
-                              plazo_de_liquidacion, tree)
+                                  tipo_de_inversion,
+                                  horizonte,
+                                  sociedad_gerente,
+                                  sociedad_depositaria,
+                                  region,
+                                  cotizado_originalmente,
+                                  calificacion,
+                                  fecha_de_calificacion,
+                                  calificadora_de_riesgo,
+                                  pais_sede,
+                                  tipo_de_activo,
+                                  estado,
+                                  bolsa,
+                                  codigo_cafci,
+                                  comision_de_ingreso,
+                                  honorarios_de_administracion,
+                                  comision_de_egreso,
+                                  comision_de_transferencia,
+                                  gastos_ordinarios_de_gestion,
+                                  cobra_comision_por_desempeno,
+                                  inversion_minima,
+                                  plazo_de_liquidacion, tree)
             clear_text()
 
         def modificar_sofisticado(nombre_del_fondo,
@@ -513,28 +513,28 @@ class VistaPrincipal():
                                   inversion_minima,
                                   plazo_de_liquidacion, tree):
             mi_base_de_datos.modificar(nombre_del_fondo,
-                                      tipo_de_inversion,
-                                      horizonte,
-                                      sociedad_gerente,
-                                      sociedad_depositaria,
-                                      region,
-                                      cotizado_originalmente,
-                                      calificacion,
-                                      fecha_de_calificacion,
-                                      calificadora_de_riesgo,
-                                      pais_sede,
-                                      tipo_de_activo,
-                                      estado,
-                                      bolsa,
-                                      codigo_cafci,
-                                      comision_de_ingreso,
-                                      honorarios_de_administracion,
-                                      comision_de_egreso,
-                                      comision_de_transferencia,
-                                      gastos_ordinarios_de_gestion,
-                                      cobra_comision_por_desempeno,
-                                      inversion_minima,
-                                      plazo_de_liquidacion, tree)
+                                       tipo_de_inversion,
+                                       horizonte,
+                                       sociedad_gerente,
+                                       sociedad_depositaria,
+                                       region,
+                                       cotizado_originalmente,
+                                       calificacion,
+                                       fecha_de_calificacion,
+                                       calificadora_de_riesgo,
+                                       pais_sede,
+                                       tipo_de_activo,
+                                       estado,
+                                       bolsa,
+                                       codigo_cafci,
+                                       comision_de_ingreso,
+                                       honorarios_de_administracion,
+                                       comision_de_egreso,
+                                       comision_de_transferencia,
+                                       gastos_ordinarios_de_gestion,
+                                       cobra_comision_por_desempeno,
+                                       inversion_minima,
+                                       plazo_de_liquidacion, tree)
             clear_text()
 
 
@@ -568,28 +568,28 @@ class VistaPrincipal():
         boton_consulta.grid(row=2, column=2, sticky="ew")
         boton_modificar = Button(root, text="Modificar registro en ddbb",
                                 command=lambda:modificar_sofisticado(nombre_del_fondo.get(),
-                                                                    tipo_de_inversion.get(),
-                                                                    horizonte.get(),
-                                                                    sociedad_gerente.get(),
-                                                                    sociedad_depositaria.get(),
-                                                                    region.get(),
-                                                                    cotizado_originalmente.get(),
-                                                                    calificacion.get(),
-                                                                    fecha_de_calificacion.get(),
-                                                                    calificadora_de_riesgo.get(),
-                                                                    pais_sede.get(),
-                                                                    tipo_de_activo.get(),
-                                                                    estado.get(),
-                                                                    bolsa.get(),
-                                                                    codigo_cafci.get(),
-                                                                    comision_de_ingreso.get(),
-                                                                    honorarios_de_administracion.get(),
-                                                                    comision_de_egreso.get(),
-                                                                    comision_de_transferencia.get(),
-                                                                    gastos_ordinarios_de_gestion.get(),
-                                                                    cobra_comision_por_desempeno.get(),
-                                                                    inversion_minima.get(),
-                                                                    plazo_de_liquidacion.get(), tree))
+                                                                     tipo_de_inversion.get(),
+                                                                     horizonte.get(),
+                                                                     sociedad_gerente.get(),
+                                                                     sociedad_depositaria.get(),
+                                                                     region.get(),
+                                                                     cotizado_originalmente.get(),
+                                                                     calificacion.get(),
+                                                                     fecha_de_calificacion.get(),
+                                                                     calificadora_de_riesgo.get(),
+                                                                     pais_sede.get(),
+                                                                     tipo_de_activo.get(),
+                                                                     estado.get(),
+                                                                     bolsa.get(),
+                                                                     codigo_cafci.get(),
+                                                                     comision_de_ingreso.get(),
+                                                                     honorarios_de_administracion.get(),
+                                                                     comision_de_egreso.get(),
+                                                                     comision_de_transferencia.get(),
+                                                                     gastos_ordinarios_de_gestion.get(),
+                                                                     cobra_comision_por_desempeno.get(),
+                                                                     inversion_minima.get(),
+                                                                     plazo_de_liquidacion.get(), tree))
         boton_modificar.grid(row=3, column=2, sticky="ew")
         boton_borrar = Button(root, text="Baja de registro de la ddbb",
                               command=lambda:mi_base_de_datos.borrar(tree))
@@ -599,6 +599,6 @@ class VistaPrincipal():
         boton_limpiar.grid(row=5, column=2, sticky="ew")
         boton_consulta_especifica=Button(root, text="Consulta y Analisis del fondo",
                                         command=lambda:self.mi_modelo.consultar_especifica(id_consulta_especifica.get(),
-                                                                                            numero_de_años.get(),
-                                                                                            tree2, root))
+                                                                                           numero_de_años.get(),
+                                                                                           tree2, root))
         boton_consulta_especifica.grid(row=33, column=2, sticky="ew")

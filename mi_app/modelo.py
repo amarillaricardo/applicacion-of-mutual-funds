@@ -125,7 +125,7 @@ class Modelo(Sujeto):
         for indice in range(0, len(consulta_especifica.iloc[:, 1])):
             if indice < len(rentabilidad):
                 mitreview.insert("", "end", text=str(campo[indice]),
-                                 values=(str(variable[indice]), str(rentabilidad[indice]), 
+                                 values=(str(variable[indice]), str(rentabilidad[indice]),
                                          str(tasa[indice])))
             else:
                 mitreview.insert("", "end", text=str(campo[indice]), values=(str(variable[indice]), ))

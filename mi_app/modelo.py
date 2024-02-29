@@ -62,7 +62,7 @@ class Modelo(Sujeto):
                                                       "sociedad_gerente", "sociedad_depositaria",
                                                       "region", "cotizado_originalmente",
                                                       "calificacion", "fecha_de_calificacion",
-                                                       "calificadora_de_riesgo", "pais_sede",
+                                                      "calificadora_de_riesgo", "pais_sede",
                                                       "tipo_de_activo", "estado", "bolsa",
                                                       "codigo_cafci", "comision_de_ingreso",
                                                       "honorarios_de_administracion", "comision_de_egreso",
@@ -74,35 +74,35 @@ class Modelo(Sujeto):
                 consulta_especifica = df_transposed.iloc[:, [1, 0]]
                 consulta_especifica.index = list(range(0, len(df_transposed.iloc[:, 1]), 1))
                 consulta_especifica.columns = ['campo', "variable"]
-                tabla_de_retornos = {"Variables":[
-                                                  "Retorno de 1 semana",
-                                                  "Retorno 1 mes",
-                                                  "Retorno de 3 meses",
-                                                  "Retorno de 6 meses",
-                                                  "Retorno de 9 meses",
-                                                  "Retorno de 12 meses",
-                                                  "Retorno de 2 años",
-                                                  "Retorno de 3 años",
-                                                  "Retorno de 4 años",
-                                                  "Retorno de 5 años",
-                                                  "Volatilidad anual",
-                                                  "Inflacion del año",
-                                                  "Var. dolar CCL del año",
-                                                    ],"Tasa": [
-                                                               float(np.random.normal(7, 2, 1)),
-                                                               float(np.random.normal(20, 5, 1)),
-                                                               float(np.random.normal(60, 10, 1)),
-                                                               float(np.random.normal(80, 10, 1)),
-                                                               float(np.random.normal(100, 10, 1)),
-                                                               float(np.random.normal(200, 10, 1)),
-                                                               float(np.random.normal(290, 10, 1)),
-                                                               float(np.random.normal(360, 10, 1)),
-                                                               float(np.random.normal(400, 10, 1)),
-                                                               float(np.random.normal(500, 10, 1)),
-                                                               float(np.random.normal(640, 10, 1)),
-                                                               100,
-                                                               120
-                                                               ]}
+                tabla_de_retornos = {"Variables": [
+                                                   "Retorno de 1 semana",
+                                                   "Retorno 1 mes",
+                                                   "Retorno de 3 meses",
+                                                   "Retorno de 6 meses",
+                                                   "Retorno de 9 meses",
+                                                   "Retorno de 12 meses",
+                                                   "Retorno de 2 años",
+                                                   "Retorno de 3 años",
+                                                   "Retorno de 4 años",
+                                                   "Retorno de 5 años",
+                                                   "Volatilidad anual",
+                                                   "Inflacion del año",
+                                                   "Var. dolar CCL del año",
+                                                    ], "Tasa": [
+                                                                float(np.random.normal(7, 2, 1)),
+                                                                float(np.random.normal(20, 5, 1)),
+                                                                float(np.random.normal(60, 10, 1)),
+                                                                float(np.random.normal(80, 10, 1)),
+                                                                float(np.random.normal(100, 10, 1)),
+                                                                float(np.random.normal(200, 10, 1)),
+                                                                float(np.random.normal(290, 10, 1)),
+                                                                float(np.random.normal(360, 10, 1)),
+                                                                float(np.random.normal(400, 10, 1)),
+                                                                float(np.random.normal(500, 10, 1)),
+                                                                float(np.random.normal(640, 10, 1)),
+                                                                100,
+                                                                120
+                                                                ]}
                 self.actualizar_treeview2(tabla_de_retornos, consulta_especifica, tree2)
                 self.simulacion_cotizaciones_del_fondo(numero_de_años, root)
                 showinfo("Base de datos: Consulta",
@@ -124,9 +124,11 @@ class Modelo(Sujeto):
         tasa = list(tabla_de_retornos["Tasa"])
         for indice in range(0, len(consulta_especifica.iloc[:, 1])):
             if indice < len(rentabilidad):
-                mitreview.insert("", "end", text=str(campo[indice]), values = (str(variable[indice]), str(rentabilidad[indice]), str(tasa[indice])))
+                mitreview.insert("", "end", text=str(campo[indice]),
+                                 values=(str(variable[indice]), str(rentabilidad[indice]), 
+                                         str(tasa[indice])))
             else:
-                mitreview.insert("", "end", text=str(campo[indice]), values = (str(variable[indice]), ))
+                mitreview.insert("", "end", text=str(campo[indice]), values=(str(variable[indice]), ))
 
     @log('simulaciones_de_cotizaciones_de_fondos.log')
     def simulacion_cotizaciones_del_fondo(self, numero_de_años, root):
@@ -134,13 +136,13 @@ class Modelo(Sujeto):
         numbers = range((2023-numero_de_años), 2023)
         años = []
         for number in numbers:
-              años.append(number)
+            años.append(number)
         valor_de_cuota_parte = np.random.normal(10000, 4000, numero_de_años)
         patrimonio_de_fondo = np.random.normal(100000000, 7000000, numero_de_años)
         cantidad_de_cuotapartes = patrimonio_de_fondo/valor_de_cuota_parte
-        cotizaciones_graph = {"años":años, "vcp":list(valor_de_cuota_parte)}
-        patrimonio_graph = {"años":años, "PN":list(patrimonio_de_fondo)}
-        cantidad_de_cuotas_graph = {"años":años, "CCP":list(cantidad_de_cuotapartes)}
+        cotizaciones_graph = {"años": años, "vcp": list(valor_de_cuota_parte)}
+        patrimonio_graph = {"años": años, "PN": list(patrimonio_de_fondo)}
+        cantidad_de_cuotas_graph = {"años": años, "CCP": list(cantidad_de_cuotapartes)}
         retornos = []
         for x in range(0, len(cotizaciones_graph["vcp"])):
             if x == 0:
@@ -150,38 +152,38 @@ class Modelo(Sujeto):
                 valor_anterior = float(cotizaciones_graph['vcp'][x-1])
                 retorno_periodo = (((valor_actual/valor_anterior)-1)*100)
             retornos.append(retorno_periodo)
-        rentabilidad_anual_graph = {"años":años, "retorno anual":retornos}
+        rentabilidad_anual_graph = {"años": años, "retorno anual": retornos}
         df1 = pd.DataFrame(cotizaciones_graph)
         df2 = pd.DataFrame(patrimonio_graph)
         df3 = pd.DataFrame(cantidad_de_cuotas_graph)
         df4 = pd.DataFrame(rentabilidad_anual_graph)
-        figure1 = plt.Figure(figsize = (4, 4), dpi = 100)
+        figure1 = plt.Figure(figsize=(4, 4), dpi=100)
         ax1 = figure1.add_subplot(111)
         line1 = FigureCanvasTkAgg(figure1, root)
-        line1.get_tk_widget().grid(row = 0, column = 4, columnspan = 4, rowspan = 23)
+        line1.get_tk_widget().grid(row=0, column=4, columnspan=4, rowspan=23)
         df1 = df1[['años', 'vcp']].groupby('años').sum()
-        df1.plot(kind = 'line', legend = True, ax = ax1, color = 'r', marker = 'o', fontsize = 8)
+        df1.plot(kind='line', legend=True, ax=ax1, color='r', marker='o', fontsize=8)
         ax1.set_title('Valor de Cuota Parte')
-        figure2 = plt.Figure(figsize = (4, 4), dpi = 100)
+        figure2 = plt.Figure(figsize=(4, 4), dpi=100)
         ax2 = figure2.add_subplot(111)
         line2 = FigureCanvasTkAgg(figure2, root)
-        line2.get_tk_widget().grid(row = 0, column = 10, columnspan = 4, rowspan = 23)
+        line2.get_tk_widget().grid(row=0, column=10, columnspan=4, rowspan=23)
         df2 = df2[['años', 'PN']].groupby('años').sum()
-        df2.plot(kind = 'line', legend = True, ax = ax2, color = 'r', marker = 'o', fontsize = 10)
+        df2.plot(kind='line', legend=True, ax=ax2, color='r', marker='o', fontsize=10)
         ax2.set_title('Patrimonio neto del Fondo')
-        figure3 = plt.Figure(figsize = (4, 4), dpi = 100)
+        figure3 = plt.Figure(figsize=(4, 4), dpi=100)
         ax3 = figure3.add_subplot(111)
         line3 = FigureCanvasTkAgg(figure3, root)
-        line3.get_tk_widget().grid(row = 25, column = 4, columnspan = 4, rowspan = 23)
+        line3.get_tk_widget().grid(row=25, column=4, columnspan=4, rowspan=23)
         df3 = df3[['años', 'CCP']].groupby('años').sum()
-        df3.plot(kind = 'line', legend = True, ax = ax3, color = 'r', marker = 'o', fontsize = 10)
+        df3.plot(kind='line', legend=True, ax=ax3, color='r', marker='o', fontsize=10)
         ax3.set_title('Cantidad de Cuotapartes')
-        figure4 = plt.Figure(figsize = (4, 4), dpi = 100)
+        figure4 = plt.Figure(figsize=(4, 4), dpi=100)
         ax4 = figure4.add_subplot(111)
         bar4 = FigureCanvasTkAgg(figure4, root)
-        bar4.get_tk_widget().grid(row = 25, column = 10,columnspan = 4,rowspan = 23)
+        bar4.get_tk_widget().grid(row=25, column=10, columnspan=4, rowspan=23)
         df4 = df4[['años', 'retorno anual']].groupby('años').sum()
-        df4.plot(kind = 'bar', legend = True, ax = ax4)
+        df4.plot(kind='bar', legend=True, ax=ax4)
         ax4.set_title('Retorno Anual')
         self.notificar(rentabilidad_anual_graph)
         t1 = "El resultado de la simulacion es la siguiente: "
@@ -203,8 +205,8 @@ class Modelo(Sujeto):
         for element in records:
             mitreview.delete(element)
         for indice in range(0, len(tabla_de_retornos["Variables"])):
-            mitreview.insert("", "end", text = str(tabla_de_retornos["Variables"][indice], ),
-                             values = (str(tabla_de_retornos["Tasa"][indice]), ))
+            mitreview.insert("", "end", text=str(tabla_de_retornos["Variables"][indice], ),
+                             values=(str(tabla_de_retornos["Tasa"][indice]), ))
 
     def hola(self):
         print("Menu a completarse")

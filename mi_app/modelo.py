@@ -18,7 +18,8 @@ from observador import Sujeto
 
 mi_base_de_datos = BaseDeDatos()
 
-# Decorador con parametro el cual es un log de seguimiento de las simulaciones realizadas. 
+# Decorador con parametro el cual es un log de seguimiento de las simulaciones realizadas.
+
 
 def log(fichero_log):
 
@@ -42,12 +43,12 @@ class Modelo(Sujeto):
     def consultar_especifica(self, id_del_fondo, numero_de_años, tree2, root):
         if id_del_fondo == "":
             showinfo("Consulta especifica",
-                     "Debe seleccionar un id de fondo para continuar,"+
+                     "Debe seleccionar un id de fondo para continuar," +
                      " luego de haber consultado la ddbb. Gracias")
         elif id_del_fondo != "":
             if numero_de_años == 0:
                 showinfo("Consulta especifica",
-                         "Debe seleccionar año para analisis de "+
+                         "Debe seleccionar año para analisis de " +
                          "rentabilidad para continuar. Gracias")
             elif numero_de_años != 0:
                 id_del_fondo = str(id_del_fondo)
@@ -56,11 +57,16 @@ class Modelo(Sujeto):
                 cursor = con.cursor()
                 datos = cursor.execute(sql)
                 resultado = datos.fetchall()
-                df = pd.DataFrame(resultado, columns=["id", "nombre_del_fondo", "tipo_de_inversion", "horizonte", "sociedad_gerente",
-                                                      "sociedad_depositaria", "region", "cotizado_originalmente", "calificacion",
-                                                      "fecha_de_calificacion", "calificadora_de_riesgo", "pais_sede",
-                                                      "tipo_de_activo", "estado", "bolsa", "codigo_cafci", "comision_de_ingreso",
-                                                      "honorarios_de_administracion", "comision_de_egreso", "comision_de_transferencia",
+                df = pd.DataFrame(resultado, columns=["id", "nombre_del_fondo",
+                                                      "tipo_de_inversion", "horizonte",
+                                                      "sociedad_gerente", "sociedad_depositaria",
+                                                      "region", "cotizado_originalmente",
+                                                      "calificacion", "fecha_de_calificacion",
+                                                       "calificadora_de_riesgo", "pais_sede",
+                                                      "tipo_de_activo", "estado", "bolsa",
+                                                      "codigo_cafci", "comision_de_ingreso",
+                                                      "honorarios_de_administracion", "comision_de_egreso",
+                                                      "comision_de_transferencia",
                                                       "gastos_ordinarios_de_gestion", "cobra_comision_por_desempeno",
                                                       "inversion_minima", "plazo_de_liquidacion"])
                 df_transposed = df.T

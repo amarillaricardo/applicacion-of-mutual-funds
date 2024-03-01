@@ -9,7 +9,6 @@ Created on Mon Dec 18 08:03:57 2023
 # import sqlite3
 # import re
 import matplotlib
-matplotlib.use('Agg')
 from tkinter.messagebox import showinfo
 import numpy as np
 import pandas as pd
@@ -17,6 +16,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from base_de_datos import BaseDeDatos
 from observador import Sujeto
+
+matplotlib.use('Agg')
 
 mi_base_de_datos = BaseDeDatos()
 

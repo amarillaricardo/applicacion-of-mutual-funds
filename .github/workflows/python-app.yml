@@ -28,6 +28,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest IPython numpy pandas statsmodels regex datetime matplotlib
         sudo apt-get install python3-tk
+        ssh -X remoteMachine
+        export DISPLAY=mymachine.com:0.0
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |

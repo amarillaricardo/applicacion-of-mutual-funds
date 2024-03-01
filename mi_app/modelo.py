@@ -8,7 +8,6 @@ Created on Mon Dec 18 08:03:57 2023
 # from tkinter import ttk
 # import sqlite3
 # import re
-import matplotlib
 from tkinter.messagebox import showinfo
 import numpy as np
 import pandas as pd

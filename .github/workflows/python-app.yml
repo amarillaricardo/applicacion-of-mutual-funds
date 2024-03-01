@@ -32,17 +32,8 @@ jobs:
       uses: actions/hello-world-javascript-action@main
       with:
         who-to-greet: ${{ vars.GREET_NAME }}
+        
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read/write
-
-jobs:
   build:
 
     runs-on: ubuntu-latest

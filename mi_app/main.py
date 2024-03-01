@@ -10,6 +10,10 @@ from excepciones import RegistroLogError
 from excepciones import registrar
 import observador
 
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using :0.0')
+    os.environ.__setitem__('DISPLAY', ':0.0')
+
 if __name__ == "__main__":
     root_tk = Tk()
     mi_app = VistaPrincipal(root_tk)

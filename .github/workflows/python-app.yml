@@ -37,6 +37,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        ssh -X remoteMachine
         export DISPLAY=mymachine.com:0.0
         python mi_app/main.py
